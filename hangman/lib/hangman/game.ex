@@ -23,7 +23,6 @@ defmodule Hangman.Game do
 
   def make_move(game, guess) do  #  when is_valid_guess(guess) 
 #     guess = String.downcase(guess, :ascii)
-    IO.inspect game
     accept_move(game, guess, MapSet.member?(game.used, guess))
   end
 
@@ -57,7 +56,6 @@ defmodule Hangman.Game do
     |> MapSet.subset?(game.used)
     |> maybe_won()
     Map.put(game, :game_state, new_state)
-    IO.inspect game
   end
 
   defp score_guess(game = %{ turns_left: 1 }, _not_good_guess) do

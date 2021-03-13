@@ -1,0 +1,12 @@
+<%= game_state(@tally.game_state) %>
+
+<div class="container">
+<div class="row">
+  <div class="column">
+    <%= render "_gallows.html", left: @tally.turns_left %>
+  </div>
+  <div class="column column-offset-8">
+    <%= render "_status.html", tally: @tally, conn: @conn %>
+  </div>
+</div>
+</div>
